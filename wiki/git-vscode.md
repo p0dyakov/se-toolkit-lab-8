@@ -14,6 +14,7 @@
   - [Switch to a new branch using the `VS Code Terminal`](#switch-to-a-new-branch-using-the-vs-code-terminal)
   - [Switch to a new branch using `GitLens`](#switch-to-a-new-branch-using-gitlens)
 - [Detect conflicts](#detect-conflicts)
+  - [Detect conflicts using the `VS Code Terminal`](#detect-conflicts-using-the-vs-code-terminal)
   - [Detect conflicts using `GitLens`](#detect-conflicts-using-gitlens)
 - [Hard reset the `<branch>`](#hard-reset-the-branch)
 - [Resolve a merge conflict](#resolve-a-merge-conflict)
@@ -198,6 +199,23 @@ Docs:
 ## Detect conflicts
 
 It can happen that commits in [`<branch>`](./git.md#branch) on [`<remote>`](./git.md#remote-placeholder) are different from commits on the `<branch>` in the cloned repo on your computer.
+
+- Method 1: [Detect conflicts using `GitLens`](#detect-conflicts-using-gitlens)
+- Method 2: [Detect conflicts using the `VS Code Terminal`](#detect-conflicts-using-the-vs-code-terminal)
+
+### Detect conflicts using the `VS Code Terminal`
+
+1. [Fetch the latest changes using the `VS Code Terminal`](#fetch-the-latest-changes-using-the-vs-code-terminal).
+
+2. To compare the local [`<branch>`](./git.md#branch-placeholder) with the `<branch>` on `<remote>`,
+
+   [run in the `VS Code Terminal`](./vs-code.md#run-a-command-in-the-vs-code-terminal):
+
+   ```terminal
+   git status
+   ```
+
+   If the output contains `Your branch is behind`, `Your branch is ahead`, or `have diverged`, there are differences between the local and remote branches.
 
 ### Detect conflicts using `GitLens`
 
