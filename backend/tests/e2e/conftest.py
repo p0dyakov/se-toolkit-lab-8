@@ -8,9 +8,9 @@ import pytest
 
 @pytest.fixture(scope="session")
 def api_base_url() -> str:
-    url = os.environ.get("API_BASE_URL", "")
+    url = os.environ.get("LMS_API_BASE_URL", "")
     if not url:
-        pytest.skip("API_BASE_URL environment variable is not set")
+        pytest.skip("LMS_API_BASE_URL environment variable is not set")
     return url.rstrip("/")
 
 
