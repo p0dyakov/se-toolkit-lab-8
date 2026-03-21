@@ -113,7 +113,7 @@ Docs:
 
 ## Check that `Node.js` works
 
-1. To check the `Node.js` version,
+1. To check the [`Node.js`](#nodejs) version,
 
    [run in the `VS Code Terminal`](./vs-code.md#run-a-command-in-the-vs-code-terminal):
 
