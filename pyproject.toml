@@ -2,7 +2,7 @@
 members = ["backend", "client-telegram-bot", "nanobot"]
 
 [tool.uv.sources]
-nanobot-ai = { path = "nanobot-ai" }
+nanobot-ai = { path = "nanobot/packages/nanobot-ai" }
 
 # litellm is quarantined on PyPI (2026-03-24); override with direct wheel URL
 [tool.uv]
