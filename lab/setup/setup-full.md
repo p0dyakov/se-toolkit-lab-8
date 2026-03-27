@@ -33,7 +33,7 @@
   - [1.13. (UPD) Clone your fork on the VM (REMOTE)](#113-upd-clone-your-fork-on-the-vm-remote)
   - [1.14. (UPD) Deploy the LMS API (REMOTE)](#114-upd-deploy-the-lms-api-remote)
   - [1.15. (UPD) Set up the `Qwen Code` API (REMOTE)](#115-upd-set-up-the-qwen-code-api-remote)
-  - [1.16. Set up the `Telegram` bot](#116-set-up-the-telegram-bot)
+  - [1.16. Optional: create a `Telegram` bot token](#116-optional-create-a-telegram-bot-token)
   - [1.17. Set up the `Autochecker` bot](#117-set-up-the-autochecker-bot)
   - [1.18. Check the setup using the `Autochecker` bot](#118-check-the-setup-using-the-autochecker-bot)
 - [2. Optional steps](#2-optional-steps)

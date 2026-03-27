@@ -27,7 +27,7 @@
   - [7.6 OBER-Compatible Data Schema](#76-ober-compatible-data-schema)
   - [7.7 AI Agent — Standalone WebSocket Relay](#77-ai-agent--standalone-websocket-relay)
   - [7.8 Structured Message Protocol](#78-structured-message-protocol)
-  - [7.9 Per-User Authentication via WebSocket Query Parameter](#79-per-user-authentication-via-websocket-query-parameter)
+  - [7.9 Access Control via WebSocket Query Parameter](#79-access-control-via-websocket-query-parameter)
 
 ---
 
