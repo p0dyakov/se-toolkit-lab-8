@@ -66,6 +66,7 @@ In Task 1 you ran `nanobot agent` from the VM terminal. For production, nanobot 
      > - copying workspace or package files in the right order
      > - installing dependencies before the application package when helpful
      > - switching to a non-root runtime user in the final image
+     > - keeping that runtime user consistent with the host UID/GID if you plan to bind-mount writable source directories during development
 
    By the end of Part A, you should have modified at least:
 
@@ -77,6 +78,7 @@ In Task 1 you ran `nanobot agent` from the VM terminal. For production, nanobot 
 
    - Keep the build context at `./nanobot` with `additional_contexts: workspace: .` so the image can access `mcp/` and the root project.
    - If you bind-mount local source directories for live editing, run the container as the host user (for example with `user: "${HOST_UID}:${HOST_GID}"`) so both the host and the container can edit the same files without ownership conflicts. On the VM, get these values with `id -u` and `id -g`, then put them into your Docker env file as `HOST_UID=...` and `HOST_GID=...`.
+   - Make your `nanobot/Dockerfile` consistent with that runtime choice. A good pattern is to accept `APP_UID` and `APP_GID` as build args, create the container user with those IDs, and use the same IDs when copying writable app files into the image. Otherwise the image may still contain directories owned by a different baked-in UID/GID even though Compose runs the process as your host user.
    - You do not have to mount the whole repo into `/app`. A cleaner setup is to mount only the directories nanobot needs to edit or read, for example `./nanobot:/app/nanobot`, `./mcp:/app/mcp`, `./nanobot-websocket-channel:/app/nanobot-websocket-channel`, and read-only docs like `./wiki:/app/wiki:ro`.
    - Check that the environment variables match what your `entrypoint.py` reads.
    - Notice that the scaffold uses container-local URLs such as `http://backend:...` and `http://qwen-code-api:...` rather than the VM-shell `localhost` values from Task 1.
