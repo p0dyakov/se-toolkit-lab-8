@@ -28,8 +28,8 @@ async def get_items(session: AsyncSession = Depends(get_session)):
             },
         )
         raise HTTPException(
-            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail=f"Database unavailable while listing items: {exc}",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Database failure while listing items: {exc}",
         ) from exc
 
 
